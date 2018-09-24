@@ -1,0 +1,7 @@
+[App]
+file_write_path = ./
+
+[Zabbix]
+api_url = https://example.zabbix.com
+api_username = username
+api_password = password
