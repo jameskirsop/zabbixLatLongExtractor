@@ -19,7 +19,8 @@ for host in hosts:
             "name":host["host"]})
 
 items = zapi.item.get(output="extend",filter={'key_':'net.wan.status'},hostids=hosts_to_filter)
-items += zapi.item.get(output="extend",filter={'key_':'icmpping','key_':'icmpping[,,,,]'},hostids=hosts_to_filter)
+items += zapi.item.get(output="extend",filter={'key_':'icmpping'},hostids=hosts_to_filter)
+items += zapi.item.get(output="extend",filter={'key_':'icmpping[,,,,]'},hostids=hosts_to_filter)
 
 with open("%s%s" % (config.get('App','file_write_path'),'locations.json'),'w') as f:
     json.dump(to_json_blob,f)
